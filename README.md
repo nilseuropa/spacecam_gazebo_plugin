@@ -1,0 +1,46 @@
+# SpaceCam Gazebo ROS plugin
+
+This spaceCam sensor plugin is compatible with Gazebo 9 and ROS Melodic.
+
+![](doc/plugin.gif)
+
+### Usage
+```xml
+<gazebo reference="spacecam_link">
+  <sensor type="camera" name="spacecam">
+    <update_rate>100.0</update_rate>
+    <camera name="spacecam">
+      <horizontal_fov>0.733</horizontal_fov>
+      <image>
+        <width>1024</width>
+        <height>768</height>
+        <format>R8G8B8</format>
+      </image>
+      <clip>
+        <near>0.01</near>
+        <far>4</far>
+      </clip>
+    </camera>
+    <plugin name="camera_controller" filename="libspacecam_gazebo.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <cameraName>spacecam</cameraName>
+      <imageTopicName>image_raw</imageTopicName>
+      <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+      <frameName>spacecam_link</frameName>
+      <hackBaseline>0.07</hackBaseline>
+      <distortionK1>0.0</distortionK1>
+      <distortionK2>0.0</distortionK2>
+      <distortionK3>0.0</distortionK3>
+      <distortionT1>0.0</distortionT1>
+      <distortionT2>0.0</distortionT2>
+    </plugin>
+  </sensor>
+</gazebo>
+
+<gazebo reference="trackpoint">
+  <material>
+    Gazebo/RedGlow
+  </material>
+</gazebo>
+```

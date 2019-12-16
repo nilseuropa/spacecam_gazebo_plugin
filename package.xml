@@ -1,0 +1,23 @@
+<package>
+  <name>spacecam_gazebo</name>
+  <version>0.0.1</version>
+  <description>spacecam_gazebo_plugin</description>
+  <maintainer email="marton@nowtech.hu">nils</maintainer>
+
+  <license>no</license>
+
+  <author email="marton@nowtech.hu">nils</author>
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed to compile this package. -->
+  <build_depend>roscpp</build_depend>
+  <build_depend>gazebo_plugins</build_depend>
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <run_depend>roscpp</run_depend>
+  <run_depend>gazebo</run_depend>
+  <run_depend>gazebo_plugins</run_depend>
+
+</package>
